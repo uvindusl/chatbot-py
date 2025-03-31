@@ -14,8 +14,9 @@ def genarate_blog(paragraph_topic):
         model="gemini-2.0-flash",
         contents='Write a paragraph about the following topic. ' + paragraph_topic
     )
-
-    retrieve_blog = response
+    
+    # Access the text from the response
+    retrieve_blog = response.text
     return retrieve_blog
 
 print(genarate_blog('Why NYC is better than your city.'))
