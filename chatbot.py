@@ -1,5 +1,6 @@
 from google import genai
 from google.genai import types
+from dotenv import dotenv_values
 
 # client = genai.Client(api_key="AIzaSyA5eqw2zMyAjqtI8-o5KM04aSg7y-n5Z_U")
 
@@ -8,7 +9,9 @@ from google.genai import types
 # )
 # print(response.text)
 
-client = genai.Client(api_key="AIzaSyA5eqw2zMyAjqtI8-o5KM04aSg7y-n5Z_U")
+config = dotenv_values(".env")
+
+client = genai.Client(api_key=config['API_KEY'])
 
 def genarate_blog(paragraph_topic):
     response = client.models.generate_content(
