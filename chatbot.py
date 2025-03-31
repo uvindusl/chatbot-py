@@ -2,13 +2,6 @@ from google import genai
 from google.genai import types
 from dotenv import dotenv_values
 
-# client = genai.Client(api_key="AIzaSyA5eqw2zMyAjqtI8-o5KM04aSg7y-n5Z_U")
-
-# response = client.models.generate_content(
-#     model="gemini-2.0-flash", contents=["Explain how AI works in a few words"]
-# )
-# print(response.text)
-
 config = dotenv_values(".env")
 
 client = genai.Client(api_key=config['API_KEY'])
@@ -23,7 +16,6 @@ def genarate_blog(paragraph_topic):
     )
     )
     
-    # Access the text from the response
     retrieve_blog = response.text
     return retrieve_blog
 
@@ -37,5 +29,4 @@ while keep_writing:
     else:
         keep_writing = False
 
-# print(genarate_blog('Why NYC is better than your city.'))
 
