@@ -1,3 +1,8 @@
-## pip install google-genai
+## Install these dependncies
 
-## pip install python-dotenv
+```
+ pip install google-genai
+
+ pip install python-dotenv
+
+```
